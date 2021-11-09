@@ -1,1 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/petite-vue" defer init></script>
+
+    <title>Document</title>
+    <style>
+            .progress-bar {
+
+        width: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fixed w-full h-1">
+      <div class="progress-bar h-0.5 bg-pink-600" id="progressbar"></div>
+    </div>
+
+    <main class="bg-gray-50 py-2 lg:py-12">
+      <article class="w-full font-light text-gray-700 lg:w-1/2 mx-auto">
+        <h1 class="text-8xl">
+          Wie bilde ich mir eine Meinung in der digitalen Welt?
+        </h1>
+        <h2 class="text-6xl">
+          Sensibilisierung für die Meinungsbildung im digitalen Zeitalter
+        </h2>
+        <p class="text-lg leading-loose my-4">
+          Im Sinn des ersten Schritts – Sensibilisierung für das Thema – wird in
+          diesem Kapitel die Situation beschrieben, in der heute Meinungsbildung
+          stattfindet. Dazu blicken wir zuerst auf wissenschaftliche
+          Erkenntnisse zum Informationsverhalten und den Informationskompetenzen
+          von Jugendlichen sowie auf die veränderten Zugangsbedingungen zu
+          (nachrichtlichen) Informationen insbesondere durch soziale Medien. Um
+          zu wissen, worüber wir eigentlich sprechen, wird in diesem Kapitel
+          geklärt, was eine „Meinung“ ist und unter welchen Voraussetzungen sie
+          gelingen kann. Zudem erläutern wir, was wir unter
+          Meinungsbildungskompetenz, auf die dieses Handbuch zielt, verstehen.
+          Zuletzt wird der Blick auf die Rolle des Journalismus für die freie
+          Meinungsbildung und auf die Kriterien für guten Journalismus
+          gerichtet.
+        </p>
+      </article>
+      <img class="w-full" src="https://edv.vercel.app/abb12.png" alt="" />
+      <article class="w-full font-light text-gray-700 lg:w-1/2 mx-auto">
+        <h2 class="text-6xl">
+          Von der Tagesschau zu Instagram – Wie sich Jugendliche informieren
+        </h2>
+        <p class="bg-yellow-200 pl-2 text-3xl leading-loose">
+          Wie informieren sich Jugendliche heute über das Weltgeschehen?
+        </p>
+        <p class="text-lg leading-loose my-4">
+          Noch schnell die Timeline bei Insta checken, schauen, was in der
+          WhatsApp-Gruppe so los ist und dann bei Wikipedia für das Referat
+          recherchieren: Jugendliche bewegen sich fast den ganzen Tag im Netz.
+          In praktisch allen Familien sind Smartphone, Computer/Laptop und WLAN
+          vorhanden, und 94 Prozent der Teenager besitzen selbst ein Smartphone.
+          Da die Geräte selten ausgeschaltet werden, ist Online-Sein der
+          Normalzustand. Wie Strom und Wasser gehört das WLAN zur
+          Grundversorgung. Laut der JIM-Studie 2020 haben, bezogen auf die
+          tägliche Mediennutzung, die Smartphone- (93 %), Internet- (89 %) und
+          Musiknutzung (80 %) den größten Stellenwert im Leben von Zwölf- bis
+          19-Jährigen. Das Smartphone ist der häufigste Zugangsweg zum Internet,
+          die beliebtesten Online-Angebote sind YouTube, Instagram und WhatsApp.
+          Auf der Suche nach Informationen nutzen 88 Prozent der Zwölf- bis
+          19-Jährigen in erster Linie Suchmaschinen (bspw. für das Googeln nach
+          Begriffen), zwei Drittel suchen bei YouTube nach bestimmten
+          Informationen zu bestimmten Themen, und für vier von zehn Jugendlichen
+          sind Online-Enzyklopädien wie Wikipedia die Anlaufstelle bei der
+          Informationssuche. Je ein Viertel der Jugendlichen nutzt Nachrichten
+          und Informationen von Social Media-Plattformen wie Facebook und
+          Twitter oder von den Onlineangeboten der Zeitungen . Im Vergleich zum
+          Vorjahr ist 2020 ein erhöhter Informationsbedarf bei Jugendlichen zu
+          erkennen, der sich auf die besonderen Umstände in der Corona-Pandemie
+          (Lockdown, Kontaktbeschränkungen, Schulschließungen und Homeschooling)
+          zurückführen lässt
+        </p>
+      </article>
+      <div v-scope="{ slide: 1 }" class="flex h-full relative w-full">
+        <div
+          class="ml-2 text-2xl px-4 flex items-center"
+          @click="(slide === 1) ? slide=3: slide--"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </div>
+        <div v-if="slide===1" class="h-full w-full">
+          <img
+            class="w-full"
+            src="https://www.dpa.com/fileadmin/_processed_/c/a/csm_Grafik-3_usethenews_Partizipation__1__c9dfd6ee5b.jpg"
+            alt=""
+          />
+        </div>
+        <div v-if="slide===2" class="h-full w-full">
+          <img
+            class="w-full"
+            src="https://www.dpa.com/fileadmin/_processed_/7/4/csm_usethenews_Grafik-Beurteilung_Berichterstattung_c350dad706.jpg"
+            alt=""
+          />
+        </div>
+        <div v-if="slide===3" class="h-full w-full">
+          <img
+            class="w-full"
+            src="https://www.dpa.com/fileadmin/_processed_/f/d/csm_Grafik-1_usethenews_meinungsbildungsrelevanz__1__f3c678dd23.jpg"
+            alt=""
+          />
+        </div>
+
+        <div
+          class="ml-2 text-2xl px-4 flex items-center"
+          @click="(slide === 3) ? slide=1: slide++"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 w-min mx-auto">
+          <div class="flex">
+            <div
+              :class="[(slide===1) ? ' bg-pink-500':'bg-gray-400 ']"
+              class="rounded-full w-4 h-4 m-1"
+            ></div>
+            <div
+              :class="[(slide===2) ? ' bg-pink-500':'bg-gray-400']"
+              class="rounded-full w-4 h-4 m-1"
+            ></div>
+            <div
+              :class="[(slide===3) ? ' bg-pink-500':'bg-gray-400']"
+              class="rounded-full w-4 h-4 m-1"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <article class="w-full font-light text-gray-700 lg:w-1/2 mx-auto">
+        <p class="text-lg leading-loose my-4">
+          Auch zu politischen Themen informieren sich junge Menschen vor allem
+          online, wie die Shell Studie 2019 feststellt (die regelmäßig
+          untersucht, wie 12- bis 25-Jährige in Deutschland aufwachsen): „(...)
+          Internet und Social Media haben den klassischen Medien im Bereich der
+          gezielten politischen Informationssuche mittlerweile den Rang
+          abgelaufen.“ Und auch der Reuters Institute Digital News Report 2020
+          für Deutschland zeigt, dass Reichweite und Bedeutung von sozialen
+          Medien als Nachrichtenquelle weiter gestiegen sind. 56 Prozent der 18-
+          bis 24-Jährigen nutzen soziale Medien als Ressource für Nachrichten (6
+          Prozentpunkte mehr als im Vorjahr), für 30 Prozent dieser Altersgruppe
+          sind die sozialen Medien die wichtigste Nachrichtenquelle (gegenüber
+          22 Prozent im Vorjahr) und neun Prozent der 18- bis 24-Jährigen
+          beziehen Nachrichten ausschließlich über soziale Medien (2019 waren es
+          5 %). Instagram ist dabei die Plattform, die am häufigsten als
+          Nachrichtenquelle verwendet wird (Facebook und YouTube rangieren knapp
+          dahinter), allerdings ist die Nachrichtennutzung hier oft ein
+          Nebeneffekt. „Doch nutzt niemand Instagram, um Nachrichten zu suchen.
+          Man bewegt sich eben dort – hauptsächlich, um Fotos von Freunden oder
+          Essen zu sehen – und findet dann Nachrichten quasi als Beifang“, sagt
+          Sascha Hölig vom Leibniz-Institut für Medienforschung. Unter den 18-
+          bis 24-Jährigen spielen demzufolge algorithmenbasierte Zugangswege zu
+          Nachrichten (Suchmaschinen, Aggregatoren, wie etwa Google News, oder
+          soziale Medien) insgesamt eine große Rolle (62 %); das direkte
+          Aufsuchen einer Nachrichtenmarke ist in dieser Altersgruppe rückläufig
+          (46 % gegenüber 56 % im Vorjahr).
+        </p>
+        <div class="flex">
+          <a
+            href="https://www.shell.de/about-us/shell-youth-study/infographics/_jcr_content/par/expandablelist/expandablesection_1282266101.stream/1570991138075/8d8f6eeb32a0d38c49d1dc73c8c558a448521fe8/shell-youth-study-infographic-youth-and-digital.pdf"
+            class="border-2 p-2 w-40 flex rounded-lg border-pink-500 bg-pink-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            <div class="ml-4">
+              <div>Shell Studie</div>
+              <div class="text-xs">PDF</div>
+            </div>
+          </a>
+          <a
+            href="https://leibniz-hbi.de/uploads/media/default/cms/media/dso9kqs_AP55UseTheNews.pdf"
+            class="
+              border-2
+              p-2
+              w-40
+              flex
+              mx-4
+              rounded-lg
+              border-green-500
+              bg-green-50
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            <div class="ml-4">
+              <div>UseTheNews Studie</div>
+              <div class="text-xs">PDF</div>
+            </div>
+          </a>
+          <a
+            href="https://www.mpfs.de/fileadmin/files/Studien/JIM/2020/JIM-Studie-2020_Web_final.pdf"
+            class="border-2 p-2 w-40 flex rounded-lg border-blue-500 bg-blue-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            <div class="ml-4">
+              <div>Jim Studie</div>
+              <div class="text-xs">PDF</div>
+            </div>
+          </a>
+        </div>
+        <p class="text-lg leading-loose my-4">
+          Insgesamt lässt sich für junge Internetnutzerinnen und -nutzer im
+          Alter zwischen 18 und 24 Jahren feststellen, dass sie in sozialen
+          Medien überwiegend nicht gezielt auf die Suche nach Nachrichten gehen,
+          sondern dort eher beiläufig und zufällig in Kontakt mit
+          Nachrichteninhalten kommen und sich dadurch ausreichend über aktuelle
+          Ereignisse in Deutschland und der Welt informiert fühlen. Nachrichten
+          im klassischen Sinne („hard news“) nehmen nur einen geringen
+          Stellenwert im Alltag (selbst hochgebildeter) junger Menschen ein.
+        </p>
+        <p class="text-lg leading-loose my-4">
+          Obwohl Jugendliche immer weniger fernsehen und ihre Nachrichten
+          überwiegend online beziehen, bringen sie den klassischen Medien das
+          größte Vertrauen entgegen. Die große Mehrheit hält die Informationen
+          in den ARD- (Tagesschau/Tagesthemen) oder ZDF-Fernsehnachrichten
+          (heute/ heute journal) für vertrauenswürdig. Vergleichbares gilt auch
+          für die regionale bzw. lokale Tageszeitung, die großen überregionalen
+          Tageszeitungen sowie die öffentlich-rechtlichen Radiosender. Zugang zu
+          diesen massenmedialen Angeboten finden Jugendliche immer weniger
+          analog als vielmehr online über Mediatheken, YouTube, Webseiten, Apps
+          und Podcasts, oder sie werden über soziale Medien auf sie aufmerksam.
+        </p>
+        <p class="text-lg leading-loose my-4">
+          Dennoch gelten Jugendlichen und jungen Erwachsenen Inhalte bzw.
+          Nachrichten in sozialen Medien als wenig vertrauenswürdig, was auch
+          mit einer Entkopplung der Verbindung einhergehen kann, dass
+          Nachrichten mit journalistischen Quellen assoziiert werden. Die Shell
+          Jugendstudie 2019 hat ermittelt, dass YouTube etwa jeder zweite
+          Jugendliche als „weniger bis nicht vertrauenswürdig“ bezeichnet. Auf
+          Facebook misstrauen sogar etwas mehr als zwei von drei Jugendlichen
+          den dort angebotenen Informationen. Auch Twitter vertraut nur eine
+          Minderheit. Insgesamt ist das Vertrauen in Nachrichten im Allgemeinen
+          in der Gesamtgesellschaft leicht gesunken. Am stärksten ist der
+          Vertrauensverlust aber bei den 18- bis 24-Jährigen (2020: 31 %; 2019:
+          40 %) und gegenüber den Nachrichten, denen sie in sozialen Medien
+          begegnen.
+        </p>
+        <p class="text-lg leading-loose my-4">
+          Dass Jugendliche in Deutschland insbesondere Facebook kritisch sehen,
+          scheint auf die Diskussionen rund um Fake News und Datenschutz
+          zurückzuführen. YouTube wird von ihnen etwas weniger kritisch
+          eingeschätzt. Die Plattform hat sich bei Jugendlichen zur universalen
+          Unterhaltungsund Informationsquelle entwickelt, auf der Inhalte nicht
+          nur konsumiert, sondern auch selbst hochgeladen werden. Das macht
+          Jugendliche zwar auch kritisch gegenüber den dort angebotenen
+          Inhalten. Dennoch erscheint ihnen YouTube „als Plattform, mit der sie
+          authentisch und unzensiert kritische oder avantgardistische Inhalte
+          jenseits des Mainstreams sehen oder einfach nur ihre eigenen
+          Positionen, Aktivitäten und Interessen darstellen können“, wie es
+          beispielsweise rund um die Debatte zur EU-Urheberrechtsreform im
+          Frühjahr 2019 sichtbar wurde.
+        </p>
+        <div
+          class="w-full border-l-2 border-pink-500 pl-4"
+          v-scope="{name:['Informationsparadoxon','Informationsquelle','sozialen Medien','Falschmeldungen'], sortiert:[' ',' ',' ',' '], frei:0, lsg:['Informationsparadoxon','sozialen Medien','Falschmeldungen','Informationsquelle'], test:'-'}"
+        >
+          <div class="leading-loose">
+            <h1 class="leading-loose text-xl">
+              Das
+              <div
+                @click="name.push(sortiert[0]);sortiert[0]=' ';frei=sortiert.indexOf(' ')"
+                class="
+                  my-2
+                  pl-2
+                  rounded
+                  inline-block
+                  bg-white
+                  border
+                  h-9
+                  -mb-2.5
+                  mx-2
+                  w-56
+                "
+              >
+                <div>{{ sortiert[0] }}</div>
+              </div>
+              <br />
+            </h1>
+            Jugendliche befinden sich in einem Dilemma. Zu beobachten ist ein
+            Informationsparadox: Obwohl Jugendliche den
+            <div
+              @click="name.push(sortiert[1]);sortiert[1]=' ';frei=sortiert.indexOf(' ')"
+              class="
+                my-2
+                rounded
+                inline-block
+                bg-white
+                border
+                h-8
+                -mb-2.5
+                mx-2
+                w-48
+                text-center
+              "
+            >
+              {{ sortiert[1] }}
+            </div>
+            keine allzu große Glaubwürdigkeit attestieren und sich möglicher
+            <div
+              @click="name.push(sortiert[2]);sortiert[2]=' ';frei=sortiert.indexOf(' ')"
+              class="
+                my-2
+                rounded
+                inline-block
+                bg-white
+                border
+                h-8
+                -mb-2.5
+                mx-2
+                w-48
+                text-center
+              "
+            >
+              {{ sortiert[2] }}
+            </div>
+            bewusst sind, nutzen sie die sozialen Medien als wichtigste
+            <div
+              @click="name.push(sortiert[3]);sortiert[3]=' ';frei=sortiert.indexOf(' ')"
+              class="
+                my-2
+                rounded
+                inline-block
+                bg-white
+                border
+                h-8
+                -mb-2.5
+                mx-2
+                w-48
+                text-center
+              "
+            >
+              {{ sortiert[3] }}
+            </div>
+            für tagesaktuelle Themen. „Jugendliche sind sich dieser
+            Widersprüchlichkeit durchaus bewusst, wissen aber oft nicht, wie sie
+            damit umgehen sollen.“
+          </div>
+          <div class="flex flex-wrap w-full bg-gray-50 pb-2">
+            <div
+              v-if="name[0]!=undefined"
+              @click="sortiert[frei]=name[0];name.splice(0,1);frei=sortiert.indexOf(' ')"
+              class="mt-1 bg-white px-4 ml-2 py-2 rounded-lg border"
+            >
+              {{ name[0] }}
+            </div>
+            <div
+              v-if="name[1]!=undefined"
+              @click="sortiert[frei]=name[1];name.splice(1,1);frei=sortiert.indexOf(' ')"
+              class="mt-1 bg-white px-4 ml-2 py-2 rounded-lg border"
+            >
+              {{ name[1] }}
+            </div>
+            <div
+              v-if="name[2]!=undefined"
+              @click="sortiert[frei]=name[2];name.splice(2,1);frei=sortiert.indexOf(' ')"
+              class="mt-1 bg-white px-4 ml-2 py-2 rounded-lg border"
+            >
+              {{ name[2] }}
+            </div>
+            <div
+              v-if="name[3]!=undefined"
+              @click="sortiert[frei]=name[3];name.splice(3,1);frei=sortiert.indexOf(' ')"
+              class="mt-1 bg-white px-4 ml-2 py-2 rounded-lg border"
+            >
+              {{ name[3] }}
+            </div>
+          </div>
+          <div
+            @click="(JSON.stringify(sortiert)===JSON.stringify(lsg))?  test='Sehr gut gemacht!' : test='Schade!'"
+            class="
+              border
+              p-2
+              m-4
+              w-min
+              bg-pink-50
+              borderpink-500
+              rounded
+              text-black
+              font-medium
+            "
+          >
+            Prüfen
+          </div>
+          <div
+            v-if="test!='-'"
+            :class="[test==='Schade!'? 'bg-red-50':'bg-green-50']"
+            class="text-lg text-black px-4 py-4 mb-4"
+          >
+            {{ test }}
+          </div>
+        </div>
+        <h2 class="text-6xl">
+          Medienkompetenz: Journalismus in der Pflicht | ZAPP | NDR
+        </h2>
+        <p class="text-lg leading-loose my-4">
+          Für den Medienwissenschaftler Bernhard Pörksen muss Journalismus es
+          als Teil seiner Aufgabe sehen, Medienkompetenz zu vermitteln und die
+          eigenen Prinzipien zu erklären.
+        </p>
+        <div class="videoWrapper">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/5y7AIu2J7QY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <h2 class="text-6xl leading-loose border-t">Aufgaben</h2>
+        <ol class="list-decimal">
+          <li class="text-lg leading-loose">
+            Öffne den Link zur Shell Studie und schau dir die Inforgrafik genau
+            an
+          </li>
+          <li class="text-lg leading-loose">
+            <span class="font-medium">Gruppenarbeit: </span>Führt in der Klasse
+            eine kleine Umfrage mit gleichen oder ähnlichen Fragen durch und
+            sammelt die Ergebnisse
+          </li>
+          <li class="text-lg leading-loose">
+            Erstelle in Einzelarbeit mit Hilfe eines
+            Tabellenkalkulationsprogramm Diagramme aus der Shell-Studie
+          </li>
+          <li class="text-lg leading-loose">
+            Kombiniere verschiedene Diagramme zu einer Infografik und schreibe
+            einen kurzen Kommentar
+          </li>
+        </ol>
+      </article>
+    </main>
+    <script>
+      // When the user scrolls the page, execute myFunction
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      function myFunction() {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressbar").style.width = scrolled + "%";
+      }
+    </script>
+    <style>
+            .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+      }
+      .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </body>
+</html>
